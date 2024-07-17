@@ -56,7 +56,7 @@ function storeCity(city) {
 function updateCityDropdown() {
     const selectCities = document.getElementById('selectCities');
     const storedCities = JSON.parse(sessionStorage.getItem('searchedCities')) || [];
-    selectCities.innerHTML = '<option value="">History</option>';
+    selectCities.innerHTML = '<option value="">Select</option>';
     storedCities.forEach(city => {
         const option = document.createElement('option');
         option.value = city;
