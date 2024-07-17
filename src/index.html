@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1e30c8571a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="output.css" />
+    <title>weather</title>
+  </head>
+  <body class="h-[100vh] w-[100%] md:overflow-hidden">
+    <!-- WeatherApp\src\index.html -->
+    <main
+      class="flex gap-10 lg:gap-0 flex-col lg:flex-row p-5 lg:justify-around justify-center w-[100%] items-center backdrop-blur-sm"
+    >
+      <!-- Options -->
+      <section
+        class=" lg:h-[550px] w-[100%] lg:w-[100px] justify-around lg:justify-center flex-wrap items-center rounded-md p-5 flex flex-row lg:flex-col gap-10"
+      >
+        <div>
+          <span class="cursor-pointer"
+            ><i class="fa-brands fa-font-awesome fa-2xl"></i
+          ></span>
+        </div>
+        <div class="flex flex-row lg:flex-col flex-wrap mt-10 gap-10">
+          <p
+            class="flex flex-col justify-center items-center gap-2 cursor-pointer" id="weathericon"
+          >
+            <i class="fa-solid fa-cloud fa-xl"></i><span>weather</span>
+          </p>
+          <p
+            class="flex flex-col justify-center items-center gap-2 cursor-pointer"
+            id="citiesicon"
+          >
+            <i class="fa-solid fa-city fa-xl"></i><span>cities</span>
+          </p>
+          <p
+            class="flex flex-col justify-center items-center gap-2 cursor-pointer" id="location"
+          >
+          <i class="fa-solid fa-location-crosshairs fa-xl"></i><span>location</span>
+          </p>
+          <p
+            class="flex flex-col justify-center items-center gap-2 cursor-pointer"
+            id="settings"
+          >
+            <i class="fa-solid fa-gear fa-xl"></i><span>settings</span>
+          </p>
+        </div>
+      </section>
+      <!-- Weather -->
+      <section
+        class="lg:h-[550px] h-auto lg:w-[600px] w-[100%] flex flex-col gap-5 rounded-md p-2"
+      >
+        <!-- Search Bar -->
+        <div class="w-[100%] gap-3 flex justify-around items-center">
+          <input
+            type="text"
+            id="city"
+            placeholder="Enter city name"
+            class="lg:w-[475px] w-[100%] bg-gray-200 text-gray-900 rounded-md p-2 border-none outline-none"
+          />
+          <select title="Select cities" name="selectCities" id="selectCities" class="bg-gray-900 rounded-md p-2 border-none outline-none">
+            <!-- Select cities -->
+          </select>
+          <span class="cursor-pointer w-[20px]" id="search"
+            ><i class="fa-solid fa-magnifying-glass fa-xl"></i
+          ></span>
+        </div>
+        <!--Weather -->
+        <div class="flex w-[100%] items-center justify-around">
+          <div class="flex gap-5 flex-col">
+            <div>
+              <h1 class="text-3xl" id="city-name"></h1>
+              <p id="condition"></p>
+            </div>
+            <div><h1 class="text-5xl" id="temp"></h1></div>
+          </div>
+          <div><img src="" alt="" id="weather-logo" class="w-[100px]" /></div>
+        </div>
+        <!-- Todays Weather -->
+        <div class=" w-[100%] flex flex-col gap-5 rounded-md p-2">
+          <h3 id="today">Todays Weather</h3>
+          <div class="flex flex-wrap gap-10 justify-around">
+            <div>
+              <p class="time">6:00 AM</p>
+              <p class="logo w-[50px]"></p>
+              <p class="Sectemp"></p>
+            </div>
+            <div>
+              <p class="time">9:00 AM</p>
+              <p class="logo w-[50px]"></p>
+              <p class="Sectemp"></p>
+            </div>
+            <div>
+              <p class="time">12:00 PM</p>
+              <p class="logo w-[50px]"></p>
+              <p class="Sectemp"></p>
+            </div>
+            <div>
+              <p class="time">3:00 PM</p>
+              <p class="logo w-[50px]"></p>
+              <p class="Sectemp"></p>
+            </div>
+            <div>
+              <p class="time">6:00 PM</p>
+              <p class="logo w-[50px]"></p>
+              <p class="Sectemp"></p>
+            </div>
+            <div>
+              <p class="time">9:00 PM</p>
+              <p class="logo w-[50px]"></p>
+              <p class="Sectemp"></p>
+            </div>
+          </div>
+        </div>
+        <!-- Air Condition -->
+        <div class=" w-[100%] flex flex-col gap-2 p-2 rounded-md">
+          <div class="flex justify-between items-center">
+            <p>Air Condition</p>
+            <span>See More</span>
+          </div>
+          <div class="flex justify-around">
+            <div class="flex gap-2 flex-col justify-around">
+              <div class="flex gap-2">
+                <p id="logoCondition"><i class="fa-solid fa-temperature-three-quarters"></i></p>
+                <div>
+                  <p id="condition">Real Feel</p>
+                  <p id="tempthird"></p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <p><i class="fa-solid fa-droplet"></i></p>
+                <div>
+                  <p>Chances of rain</p>
+                  <p id="rainchance"></p>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-3 flex-col justify-around">
+              <div class="flex gap-2">
+                <p><i class="fa-solid fa-wind"></i></p>
+                <div>
+                  <p>Wind</p>
+                  <p id="wind"></p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <p><i class="fa-solid fa-sun"></i></p>
+                <div>
+                  <p>UV index</p>
+                  <p id="uv"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- upcomming days -->
+      <section
+        class="flex flex-col gap-10 h-[550px] lg:w-[350px] w-[100%] rounded-md p-2"
+      >
+        <h3 class="text-xl">7 days forecast</h3>
+        <div class="flex flex-col justify-around gap-3 h-[100%] mainforecast">
+          <!-- Upcoming Days Forecast -->
+        </div>
+      </section>
+    </main>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
